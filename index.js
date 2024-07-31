@@ -37,7 +37,7 @@ const init = async () => {
         <head>
           <title>Redirecting...</title>
           <script type="text/javascript">
-            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+            window.location.href = 'https://x.com/russell161803';
           </script>
         </head>
         <body>
