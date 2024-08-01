@@ -31,17 +31,31 @@ const init = async () => {
     method: 'GET',
     path: '/qrcode',
     handler: (request, h) => {
+      const utmRedirect = request.query.utm_redirect;
+      let redirectUrl;
+      
+      switch (utmRedirect) {
+        case 'twitter':
+          redirectUrl = 'https://x.com/russell161803';
+          break;
+        case 'instagram':
+          redirectUrl = 'https://www.instagram.com/_draw_scape';
+          break;
+        default:
+          redirectUrl = 'https://x.com/russell161803';
+      }
+
       return `
         <!DOCTYPE html>
         <html>
         <head>
           <title>Redirecting...</title>
           <script type="text/javascript">
-            window.location.href = 'https://x.com/russell161803';
+            window.location.href = '${redirectUrl}';
           </script>
         </head>
         <body>
-          <p>If you are not redirected automatically, follow this <a href="https://example.com">link</a>.</p>
+          <p>If you are not redirected automatically, follow this <a href="${redirectUrl}">link</a>.</p>
         </body>
         </html>
       `;
